@@ -1,17 +1,13 @@
 import s from './Filter.module.css';
 import PropTypes from 'prop-types';
 
-import { useState } from 'react';
 
-
-export default function Filter({ setFilterValue }) {
-
-    const [inputValue, setInputValue] = useState('');
+export default function Filter({ getFilterValue, filterName }) {
 
     const addFilterValue = (e) => {
         const { value } = e.target;
-        setInputValue(value)
-        setFilterValue(inputValue)
+
+        getFilterValue(value)
     }
 
     return (
@@ -19,7 +15,7 @@ export default function Filter({ setFilterValue }) {
             <input
                 className={s.filterInput}
                 type="text"
-                value={inputValue}
+                value={filterName}
                 onChange={addFilterValue}
                 placeholder='Find contacts by name '
             />

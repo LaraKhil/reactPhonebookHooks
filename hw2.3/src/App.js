@@ -26,6 +26,8 @@ export default function App() {
     localStorage.setItem('contacts', JSON.stringify(contacts))
   }, [contacts]);
 
+
+
   const preventAddSameContacts = name => {
     if (contacts.length) {
       return contacts.some(contact => contact.name.toLowerCase() === name.toLowerCase())
@@ -49,12 +51,16 @@ export default function App() {
     setContacts(prev => [...prev, { id: v4(), name, number }])
   };
 
+  const getFilterValue = (value) => {
+    setFilterName(value)
+  }
+
   return (
     <div className={s.appWrapper} >
       <GlobalStyles />
       <ContactForm addContact={addContact} preventAddSameContacts={preventAddSameContacts} />
       <Section title="My Contacts">
-        <Filter setFilterValue={setFilterName} />
+        <Filter getFilterValue={getFilterValue} filterName={filterName} />
         <ContactList findContact={findContact} filterName={filterName} state={contacts} deleteContact={deleteContact} />
       </Section>
     </div>

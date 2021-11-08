@@ -10,7 +10,7 @@ export default function PhoneList({ findContact, filterName, state, deleteContac
                 findContact().map(({ name, number, id }) => <li
                     className={s.contactItem}
                     key={id} >{name} {number}
-                    <button id={id} onClick={deleteContact}>Delete</button>
+                    <button id={id} onClick={deleteContact} className={buttonStyle.button}>Delete</button>
                 </li>)
                 : state.map(({ name, number, id }) => <li
                     className={s.contactItem}
