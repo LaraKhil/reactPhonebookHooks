@@ -1,0 +1,19 @@
+.button{
+    padding: 10px 15px;
+    border: none;
+    background-color: #0D62C9;
+    margin-left: 20px;
+    color: white;
+    transition: all 250ms linear;
+    font-size: 14px;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+
+.button:hover,
+.button:active{
+    color: #0D62C9;
+    background-color: white;
+
+}
+
